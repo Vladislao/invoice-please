@@ -1,0 +1,52 @@
+/*Basic*/
+.container{
+	min-width: 640px;
+	min-height: 320px;
+}
+
+.queue{
+	float:left;
+	width: 200px;
+	height: 100%;
+	border: 1px solid black;
+}
+
+/*Desk*/
+.desk{
+	float:left;
+	width: 240px;
+	height: 500px;
+	background: url(../img/desk.jpg) no-repeat no-repeat;
+	border: 1px solid black;
+}
+
+/*Dialog*/
+.dialog{
+	float: left;
+	width: 200px;
+	height: 100%;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.dialog-history{
+	max-height: 400px;
+	overflow-y: scroll;
+}
+
+.dialog-choices{
+	height: 200px;
+}
+
+.dialog-choices p:hover{
+	cursor: pointer;
+	background-color: #CCCCFF;
+}
+
+/*Modificators*/
+.color-blue{
+	color: #3366FF;
+}
+.color-red{
+	color: #FF6600;
+}

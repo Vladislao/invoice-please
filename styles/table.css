@@ -1,0 +1,43 @@
+﻿.table {
+    display: table;
+    
+}
+.tr {
+    display: table-row;
+}
+.td {
+    display: table-cell;
+}
+.content-outter {
+    width: 100%;
+    position: absolute;
+}
+.content-inner {
+    height: 100%;
+    width: 100%;
+
+}
+@-moz-document url-prefix() {
+    .content-inner {
+        position: absolute;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .body .td {
+        position: static;
+        overflow: auto;
+        height: 100%;
+    }
+    .content-outter {
+        height: 100%;
+        position: relative;
+    }
+}
+doesnotexist:-o-prefocus, .content-outter {
+    height: 100%;
+    position: absolute;
+}
+doesnotexist:-o-prefocus, .content-inner {
+    position: absolute;
+    overflow-y: scroll;
+}

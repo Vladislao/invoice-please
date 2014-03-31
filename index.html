@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Invoice, Please!</title>
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/reset.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/dialogController.js"></script>
+	<script src="scripts/services/dialogService.js"></script>
+</head>
+<body ng-app="game">
+	<div class="container">
+		<div class="queue">
+			Очередь
+		</div>
+		<div class="desk">
+			Стол
+		</div>
+		<div ng-controller="DialogController" class="dialog">
+			<div class="dialog-history">
+				<p ng-class="{'color-blue' : message.player, 'color-red': !message.player}" ng-repeat="message in dialogData.dialog">
+					— {{message.text}}
+				</p>
+			</div>
+			<hr>
+			<div class="dialog-choices">
+				<p ng-class="{'color-blue' : choice.player}" ng-click="ask(choice)" ng-repeat="choice in dialogData.choices">
+					— {{choice.text}}
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
