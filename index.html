@@ -3,36 +3,66 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Invoice, Please!</title>
-	<link rel="stylesheet" href="styles/style.css">
 	<link rel="stylesheet" href="styles/reset.css">
+	<link rel="stylesheet" href="styles/table.css">
+	<link rel="stylesheet" href="styles/watch.css">
+	<link rel="stylesheet" href="styles/style.css">
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js"></script>
+	<script src="scripts/libs/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+	<script src="scripts/libs/reactive.js"></script>
 	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/queueController.js"></script>
 	<script src="scripts/controllers/dialogController.js"></script>
+	<script src="scripts/controllers/deskController.js"></script>
+	<script src="scripts/services/botService.js"></script>
 	<script src="scripts/services/dialogService.js"></script>
 </head>
-<body ng-app="game">
-	<div class="container">
-		<div class="queue">
-			Очередь
-		</div>
-		<div class="desk">
-			Стол
-		</div>
-		<div ng-controller="DialogController" class="dialog">
-			<div class="dialog-history">
-				<p ng-class="{'color-blue' : message.player, 'color-red': !message.player}" ng-repeat="message in dialogData.dialog">
-					— {{message.text}}
-				</p>
+<body ng-app="game" class="outer">
+	<span class="visible middle">
+		<div class="container table inner">
+<!-- 			<div class="queue td">
+				Очередь
+			</div> -->
+
+			<div>
+				<div ng-controller="ResultController" class="result" ng-show="showResult">
+					<div class="text-big">Игра завершена!</div>
+					<div class="text-result">Ваш результат: {{getResult()}} из {{getCount()}}</div>
+					<div class="replay" ng-click="reload()">Начать заново</div>
+				</div>
 			</div>
-			<hr>
-			<div class="dialog-choices">
-				<p ng-class="{'color-blue' : choice.player}" ng-click="ask(choice)" ng-repeat="choice in dialogData.choices">
-					— {{choice.text}}
-				</p>
+			<div class="office td">
+				<div ng-controller="QueueController" class="queue">
+					<div class="bot-hover"></div>
+					<div class="bot" id="{{bot.id}}" style="{{ 'background: url(' + bot.img + ') no-repeat no-repeat;' }}" ng-repeat="bot in bots"></div>
+				</div>
+				<div ng-controller="DeskController" class="desk">
+					<div class="watch-object">
+						<div class="watch" ng-include="'templates/watch.html'"></div>
+					</div>
+					<div class="document yes" ng-click="next(true)"></div>
+					<div class="document no" ng-click="next(false)"></div>
+					<div class="help"></div>
+				</div>
+			</div>
+			<div ng-controller="DialogController" class="dialog td">
+				<div class="dialog-history">
+					<p ng-class="{'color-blue' : message.player, 'color-red': !message.player}" ng-repeat="message in dialogData.dialog">
+						<span ng-bind-html="'— ' + message.text"></span>
+					</p>
+				</div>
+				<hr>
+				<div class="dialog-choices">
+					<p ng-class="{'color-blue' : choice.player}" ng-click="ask(choice)" ng-repeat="choice in dialogData.choices" ng-bind-html="'— ' + choice.text">
+						<span ng-bind-html="'— ' + choice.text"></span>
+					</p>
+				</div>
 			</div>
 		</div>
-	</div>
+	</span>
+	<div class="hidden">$POWERED_BY$</div>
 </body>
 </html>

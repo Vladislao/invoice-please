@@ -1,6 +1,5 @@
 ﻿.table {
-    display: table;
-    
+    display: table;   
 }
 .tr {
     display: table-row;
@@ -8,7 +7,7 @@
 .td {
     display: table-cell;
 }
-.content-outter {
+/*.content-outter {
     width: 100%;
     position: absolute;
 }
@@ -40,4 +39,4 @@ doesnotexist:-o-prefocus, .content-outter {
 doesnotexist:-o-prefocus, .content-inner {
     position: absolute;
     overflow-y: scroll;
-}
+}*/

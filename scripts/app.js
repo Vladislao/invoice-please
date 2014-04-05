@@ -1,2 +1,2 @@
-var game = angular.module('game', []);
+var game = angular.module('game', ['clock', 'ngSanitize', 'ui.bootstrap']);
 

@@ -1,17 +1,4 @@
-game.factory('dialogService', [function(){
-	
-	// текущий бот
-	var current = null;
-	// список ботов
-	var bots = [
-	{ name: "Json Fedor", age: 15, result:{ real:true }, answers:[
-			{ text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, debitis, repudiandae libero sit aut quae est ut. Hic, consequuntur, culpa.", player: false, question: 0},
-			{ text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, mollitia tempora officia a officiis dolor aperiam animi molestias. Eveniet, nobis.", player: false, question:1 },
-			{ text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, debitis, repudiandae libero sit aut quae est ut. Hic, consequuntur, culpa.", player: false, question:2 },
-			{ text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, debitis, repudiandae libero sit aut quae est ut. Hic, consequuntur, culpa.", player: false, question:3 },
-			{ text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, debitis, repudiandae libero sit aut quae est ut. Hic, consequuntur, culpa.", player: false, question:4 }
-		]}
-	];
+game.factory('dialogService', ["botService", function(botService){
 
 	// диалог
 	var model = {
@@ -31,19 +18,22 @@ game.factory('dialogService', [function(){
 			model.choices.splice(i, 1);
 		}
 
-		model.dialog.push(current.answers[message.id]);
+		model.dialog.push(botService.getCurrent().answers[message.id]);
 	}
 	// сброс текущего диалога
 	function reset(){
 		model.choices = [
-			{ id: 1, text:'Lorem ipsum dolor sit amet.', player: true}, 
-			{ id: 2, text:'Lorem ipsum dolor sit amet.', player: true}, 
-			{ id: 3, text:'Lorem ipsum dolor sit amet.', player: true}, 
-			{ id: 4, text:'Lorem ipsum dolor sit amet.', player: true}
+			{ id: 1, text:'Какой кредит вы хотели бы получить?', player: true}, 
+			{ id: 2, text:'На какую сумму?', player: true}, 
+			{ id: 3, text:'Есть ли у вас семья, дети?', player: true},
+			{ id: 4, text:'Каков ваш ежемесячный доход?', player: true},
+			{ id: 5, text:'Предъявите необходимые документы.', player: true}
 		];
-		current = bots[0];
+		botService.getNext();
+
 		model.dialog = [
-			current.answers[0]
+			{text:'Добрый день!', player: true},
+			botService.getCurrent().answers[0]
 		];
 	}
 	// инициализируем

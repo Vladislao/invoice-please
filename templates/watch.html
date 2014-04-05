@@ -1,0 +1,15 @@
+ <div class="square" ng-cloak ng-controller="ClockController">
+  <svg viewBox="0 0 100 100">
+    <g transform="translate(50,50)">
+      <circle class="clock-face" r="48" />
+      <line ng-repeat="minor in minors track by $index" class="minor" y1="42" y2="45" transform="rotate({{360 * $index / minors.length}})" />
+      <line ng-repeat="major in majors track by $index" class="major" y1="35" y2="46" transform="rotate({{360 * $index / majors.length}})" />
+      <line class="hour" y1="2" y2="-20" transform="rotate({{30 * date.getHours() + date.getMinutes() / 2}})" />
+      <line class="minute" y1="4" y2="-30" transform="rotate({{6 * date.getMinutes() + date.getSeconds() / 10}})" />
+<!--       <g transform="rotate({{6 * date.getSeconds()}})">
+        <line class="second" y1="10" y2="-38" />
+        <line class="second-counterweight" y1="10" y2="2" />
+      </g> -->
+    </g>
+  </svg>
+</div>
