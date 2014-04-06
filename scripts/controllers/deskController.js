@@ -23,9 +23,15 @@ game.controller('DeskController', ["$rootScope", "$scope", "$modal", "botService
 			});
 		}
 	};
+
+	$scope.showAbout = function(){
+		$rootScope.showAbout = !$rootScope.showAbout;
+	}
+
 	$scope.showHelp = function(){
 		$rootScope.showHelp = !$rootScope.showHelp;
 	};
+	
 	$(function(){
 		moveRight();
 	});
@@ -50,8 +56,7 @@ game.controller('ResultController', ["$scope", "botService", function($scope, bo
 	};
 }]);
 
-game.controller('HelpController', ["$scope", "helpService", function($scope, helpService){
-	// $('.spoiler-text').hide();
+game.controller('HelpController', ["$scope", "$rootScope", "helpService", function($scope, $rootScope, helpService){
 
 	$('.spoiler-title').live('click', function(){
 	    var spoiler = $(this).parent('.spoiler');
@@ -63,11 +68,11 @@ game.controller('HelpController', ["$scope", "helpService", function($scope, hel
 	$scope.helpItems = helpService.getHelpItems();
 
 	$scope.closeHelp = function(){
-		window.$rootScope.showHelp = false;
+		$rootScope.showHelp = false;
 	};
 
 	$scope.getIncludeFile = function(section){
-        return '../partials/help' +  section.Id+ '.html';
+        return 'partials/help' +  section.Id+ '.html';
 	};
 }]);
 
