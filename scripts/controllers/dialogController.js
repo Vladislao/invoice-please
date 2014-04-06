@@ -3,7 +3,9 @@ game.controller('DialogController', ["$scope", "dialogService", function($scope,
 	$scope.dialogData = dialogService.get();
 
 	$scope.ask = function(message){
-		dialogService.ask(message);
+	    dialogService.ask(message);
+
+	    document.getElementsByTagName("audio")[2].play();
 	};
 
 	$scope.reset = function(){

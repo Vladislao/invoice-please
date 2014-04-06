@@ -55,56 +55,56 @@ game.factory('botService', [function () {
               { text: "Пожалуйста:<br/> паспорт, <br/>трудовая книжка, <br/>справка о доходах по форме 2-НДФЛ<br/>", player: false, question: 5 }
 	        ]
 	    },
-	    {
-	        id: "bot-6", name: "Аастасия Кузнецова", age: 21, result: { real: true }, img: "img/bots/woman-1.png", answers: [
-              { text: "Здравствуйте!", player: false, question: 0 },
-              { text: "Кредитную карту без всяких справок.", player: false, question: 1 },
-              { text: "Пятьдесят тысяч рублей. На айфон.", player: false, question: 2 },
-              { text: "Не жената.", player: false, question: 3 },
-              { text: "Стипендия 2 тысячи рублей в месяц.", player: false, question: 4 },
-              { text: "Пожалуйста:<br/> паспорт", player: false, question: 5 }
-	        ]
-	    },
-	    {
-	        id: "bot-7", name: "Альберт Былькаев", age: 41, result: { real: true }, img: "img/bots/man-7.png", answers: [
-              { text: "Здравствуйте!", player: false, question: 0 },
-              { text: "Я хочу получить кредитную карту вашего банка.", player: false, question: 1 },
-              { text: "Два миллиона рублей.", player: false, question: 2 },
-              { text: "Женат.", player: false, question: 3 },
-              { text: "Официальная заработная плата на заводе состяавляет 50 тыс. рублей.", player: false, question: 4 },
-              { text: "Пожалуйста:<br/> Заявление;<br/>Паспорт;<br/>Дополнительный документ, удостоверяющий личность заемщика (это может быть: водительское удостоверение, военный билет, страховое свидетельство, загранпаспорт);<br/>Копия трудовой книжки, заверенная работодателем;Копия трудового договора, заверенная работодателем постранично;Справка о доходах по форме 2-НДФЛ<br/>", player: false, question: 5 }
-	        ]
-	    },
-	    {
-	        id: "bot-8", name: "Олег Спириков", age: 37, result: { real: false }, img: "img/bots/man-8.png", answers: [
-              { text: "Здравствуйте!", player: false, question: 0 },
-              { text: "Я хочу получить кредитную карту вашего банка. Без поручителя и залога.", player: false, question: 1 },
-              { text: "Два миллиона рублей.", player: false, question: 2 },
-              { text: "В разводе.", player: false, question: 3 },
-              { text: "Я временно не работаю. Состою на бирже труда.", player: false, question: 4 },
-              { text: "Пожалуйста:<br/> Заявление;<br/>Паспорт;<br/>Дополнительный документ, удостоверяющий личность заемщика (это может быть: водительское удостоверение, военный билет, страховое свидетельство, загранпаспорт);<br/>Копия трудовой книжки, заверенная работодателем;Копия трудового договора, заверенная работодателем постранично;Справка о доходах по форме 2-НДФЛ<br/>", player: false, question: 5 }
-	        ]
-	    },
-	    {
-	        id: "bot-9", name: "Альбина Синякова", age: 19, result: { real: true }, img: "img/bots/woman-2.png", answers: [
-              { text: "Здравствуйте!", player: false, question: 0 },
-              { text: "Я хочу взять кредит на образование.", player: false, question: 1 },
-              { text: "Триста тысяч рублей.", player: false, question: 2 },
-              { text: "Не жената.", player: false, question: 3 },
-              { text: "Студентка. Не работаю.", player: false, question: 4 },
-              { text: "Пожалуйста:<br/> Паспорт;<br/>Договор с ВУЗом;<br/>Заявление.", player: false, question: 5 }
-	        ]
-	    },
-	    {
-	        id: "bot-10", name: "Светлана Сидоровна Пермякова", age: 67, result: { real: true }, img: "img/bots/woman-3.png", answers: [
-              { text: "Здравствуйте!", player: false, question: 0 },
-              { text: "Хотелось бы получить потребительский кредит, внуку на ноутбук.", player: false, question: 1 },
-              { text: "Двадцать тысяч рублей.", player: false, question: 2 },
-              { text: "Жената, есть взрослые работающие дети. Один внук.", player: false, question: 3 },
-              { text: "Пенсионерка, пенсия семь тысяч рублей.", player: false, question: 4 },
-              { text: "Пожалуйста:<br/> Паспорт;<br/>Пенсионное удостоверение,:<br/> справка 2-НДФЛ, :<br/>справка по форме банка или иной документ<br/>Заявление.", player: false, question: 5 }
-	        ]
-	    }
+	    //{
+	    //    id: "bot-6", name: "Аастасия Кузнецова", age: 21, result: { real: true }, img: "img/bots/woman-1.png", answers: [
+        //      { text: "Здравствуйте!", player: false, question: 0 },
+        //      { text: "Кредитную карту без всяких справок.", player: false, question: 1 },
+        //      { text: "Пятьдесят тысяч рублей. На айфон.", player: false, question: 2 },
+        //      { text: "Не жената.", player: false, question: 3 },
+        //      { text: "Стипендия 2 тысячи рублей в месяц.", player: false, question: 4 },
+        //      { text: "Пожалуйста:<br/> паспорт", player: false, question: 5 }
+	    //    ]
+	    //},
+	    //{
+	    //    id: "bot-7", name: "Альберт Былькаев", age: 41, result: { real: true }, img: "img/bots/man-7.png", answers: [
+        //      { text: "Здравствуйте!", player: false, question: 0 },
+        //      { text: "Я хочу получить кредитную карту вашего банка.", player: false, question: 1 },
+        //      { text: "Два миллиона рублей.", player: false, question: 2 },
+        //      { text: "Женат.", player: false, question: 3 },
+        //      { text: "Официальная заработная плата на заводе состяавляет 50 тыс. рублей.", player: false, question: 4 },
+        //      { text: "Пожалуйста:<br/> Заявление;<br/>Паспорт;<br/>Дополнительный документ, удостоверяющий личность заемщика (это может быть: водительское удостоверение, военный билет, страховое свидетельство, загранпаспорт);<br/>Копия трудовой книжки, заверенная работодателем;Копия трудового договора, заверенная работодателем постранично;Справка о доходах по форме 2-НДФЛ<br/>", player: false, question: 5 }
+	    //    ]
+	    //},
+	    //{
+	    //    id: "bot-8", name: "Олег Спириков", age: 37, result: { real: false }, img: "img/bots/man-8.png", answers: [
+        //      { text: "Здравствуйте!", player: false, question: 0 },
+        //      { text: "Я хочу получить кредитную карту вашего банка. Без поручителя и залога.", player: false, question: 1 },
+        //      { text: "Два миллиона рублей.", player: false, question: 2 },
+        //      { text: "В разводе.", player: false, question: 3 },
+        //      { text: "Я временно не работаю. Состою на бирже труда.", player: false, question: 4 },
+        //      { text: "Пожалуйста:<br/> Заявление;<br/>Паспорт;<br/>Дополнительный документ, удостоверяющий личность заемщика (это может быть: водительское удостоверение, военный билет, страховое свидетельство, загранпаспорт);<br/>Копия трудовой книжки, заверенная работодателем;Копия трудового договора, заверенная работодателем постранично;Справка о доходах по форме 2-НДФЛ<br/>", player: false, question: 5 }
+	    //    ]
+	    //},
+	    //{
+	    //    id: "bot-9", name: "Альбина Синякова", age: 19, result: { real: true }, img: "img/bots/woman-2.png", answers: [
+        //      { text: "Здравствуйте!", player: false, question: 0 },
+        //      { text: "Я хочу взять кредит на образование.", player: false, question: 1 },
+        //      { text: "Триста тысяч рублей.", player: false, question: 2 },
+        //      { text: "Не жената.", player: false, question: 3 },
+        //      { text: "Студентка. Не работаю.", player: false, question: 4 },
+        //      { text: "Пожалуйста:<br/> Паспорт;<br/>Договор с ВУЗом;<br/>Заявление.", player: false, question: 5 }
+	    //    ]
+	    //},
+	    //{
+	    //    id: "bot-10", name: "Светлана Сидоровна Пермякова", age: 67, result: { real: true }, img: "img/bots/woman-3.png", answers: [
+        //      { text: "Здравствуйте!", player: false, question: 0 },
+        //      { text: "Хотелось бы получить потребительский кредит, внуку на ноутбук.", player: false, question: 1 },
+        //      { text: "Двадцать тысяч рублей.", player: false, question: 2 },
+        //      { text: "Жената, есть взрослые работающие дети. Один внук.", player: false, question: 3 },
+        //      { text: "Пенсионерка, пенсия семь тысяч рублей.", player: false, question: 4 },
+        //      { text: "Пожалуйста:<br/> Паспорт;<br/>Пенсионное удостоверение,:<br/> справка 2-НДФЛ, :<br/>справка по форме банка или иной документ<br/>Заявление.", player: false, question: 5 }
+	    //    ]
+	    //}
     ];
 
     function isLast() {

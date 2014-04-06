@@ -1,79 +1,100 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Invoice, Please!</title>
-	<link rel="stylesheet" href="styles/reset.css">
-	<link rel="stylesheet" href="styles/table.css">
-	<link rel="stylesheet" href="styles/watch.css">
-	<link rel="stylesheet" href="styles/style.css">
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js"></script>
-	<script src="scripts/libs/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
-	<script src="scripts/libs/reactive.js"></script>
-	<script src="scripts/app.js"></script>
-	<script src="scripts/controllers/queueController.js"></script>
-	<script src="scripts/controllers/dialogController.js"></script>
-	<script src="scripts/controllers/deskController.js"></script>
-	<script src="scripts/services/botService.js"></script>
-	<script src="scripts/services/dialogService.js"></script>
+    <meta charset="UTF-8">
+    <title>Invoice, Please!</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/watch.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js"></script>
+    <script src="scripts/libs/ui-bootstrap-custom-tpls-0.10.0.min.js"></script>
+    <script src="scripts/libs/reactive.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/queueController.js"></script>
+    <script src="scripts/controllers/dialogController.js"></script>
+    <script src="scripts/controllers/deskController.js"></script>
+    <script src="scripts/services/botService.js"></script>
+    <script src="scripts/services/dialogService.js"></script>
     <script src="scripts/services/helpService.js"></script>
     <script src="scripts/directives/backImg.js"></script>
+    <script src="scripts/filters/filters.js"></script>
 </head>
 <body ng-app="game" class="outer">
-	<span class="visible middle">
-		<div class="container table inner">
-			<div>
-				<div ng-controller="ResultController" class="result" ng-show="showResult">
-					<div class="text-big">Игра завершена!</div>
-					<div class="text-result">Ваш результат: {{getResult()}} из {{getCount()}}</div>
-					<div class="replay" ng-click="reload()">Начать заново</div>
-				</div>
-			    <div ng-controller="HelpController" ng-show="showHelp" class="help-bar">
+    <audio>
+        <source src="audio/footsteps.mp3" />
+    </audio>
+    <audio>
+        <source src="audio/flip.mp3" />
+    </audio>
+    <audio>
+        <source src="audio/crowd-cut.mp3" />
+    </audio>
+    <span class="visible middle">
+        <div class="container table inner">
+            <div>
+                <div ng-controller="ResultController" class="result" ng-show="showResult">
+                    <div class="text-big">Игра завершена!</div>
+                    <div class="text-result">Ваш результат: {{getResult()}} из {{getCount()}}</div>
+                    <div class="replay" ng-click="reload()">Начать заново</div>
+                </div>
+                <div ng-controller="HelpController" ng-show="showHelp" class="help-bar">
                     <div class="close" ng-click="closeHelp()">закрыть</div>
-			        <div class="help-paragraphs">
-			            <div class="spoiler" ng-repeat="helpItem in helpItems" ng-include="getIncludeFile(helpItem)">
-			            </div>
-			        </div>
-			    </div>
-			    <div class="about table" ng-show="showAbout" ng-click="showAbout = !showAbout">
-			    	<div class="td">
-				    	<div>Авторы: Чугунов А.П, Строев В.Д</div>
-				    	<div>Руководитель: Рогова Т.Н</div>
-				    	<div>НИРС 2014</div>
-			    	</div>
-			    </div>
-			</div>
-			<div class="office td">
-				<div ng-controller="QueueController" class="queue">
-				    <div class="bot-hover"></div>
-					<div class="bot" id="{{bot.id}}" back-img="{{bot.img}}" ng-repeat="bot in bots"></div>
-				</div>
-				<div ng-controller="DeskController" class="desk">
-					<div class="watch-object" ng-click="showAbout()">
-						<div class="watch" ng-include="'templates/watch.html'"></div>
-					</div>
-					<div class="document yes" ng-click="next(true)"></div>
-					<div class="document no" ng-click="next(false)"></div>
-					<div class="help" ng-click="showHelp()"></div>
-				</div>
-			</div>
-			<div ng-controller="DialogController" class="dialog td">
-				<div class="dialog-history">
-					<p ng-class="{'color-blue' : message.player, 'color-red': !message.player}" ng-repeat="message in dialogData.dialog">
-						<span ng-bind-html="'— ' + message.text"></span>
-					</p>
-				</div>
-				<hr>
-				<div class="dialog-choices">
-					<p ng-class="{'color-blue' : choice.player}" ng-click="ask(choice)" ng-repeat="choice in dialogData.choices" ng-bind-html="'— ' + choice.text">
-						<span ng-bind-html="'— ' + choice.text"></span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</span>
+                    <div class="help-paragraphs">
+                        <div class="spoiler" ng-repeat="helpItem in helpItems" ng-include="getIncludeFile(helpItem)">
+                        </div>
+                    </div>
+                </div>
+                <div class="about table" ng-show="showAbout" ng-click="showAbout = !showAbout">
+                    <div class="td">
+                        <div>Авторы: Чугунов А.П, Строев В.Д</div>
+                        <div>Руководитель: Рогова Т.Н</div>
+                        <div>НИРС 2014</div>
+                    </div>
+                </div>
+            </div>
+            <div class="office td">
+                <div ng-controller="QueueController" class="queue">
+                    <div class="bot-hover"></div>
+                    <div class="bot" id="{{bot.id}}" back-img="{{bot.img}}" ng-repeat="bot in bots">
+                        <div class="gui">
+                            <div ng-show="isLoaded">
+                                <p>{{bot.age | inflection:['год', 'года', 'лет']}}</p>
+                                <p>{{bot.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-controller="DeskController" class="desk">
+                    <div class="gui upper">
+                        <p>Возраст:</p>
+                        <p>Имя:</p>
+                    </div>
+                    <div class="watch-object" ng-click="showAbout()">
+                        <div class="watch" ng-include="'templates/watch.html'"></div>
+                    </div>
+                    <div class="document yes" ng-click="next(true)"></div>
+                    <div class="document no" ng-click="next(false)"></div>
+                    <div class="help" ng-click="showHelp()"></div>
+                </div>
+            </div>
+            <div ng-controller="DialogController" class="dialog td">
+                <div class="dialog-history">
+                    <p ng-class="{'color-blue' : message.player, 'color-red': !message.player}" ng-repeat="message in dialogData.dialog">
+                        <span ng-bind-html="'— ' + message.text"></span>
+                    </p>
+                </div>
+                <hr>
+                <div class="dialog-choices">
+                    <p ng-class="{'color-blue' : choice.player}" ng-click="ask(choice)" ng-repeat="choice in dialogData.choices" ng-bind-html="'— ' + choice.text">
+                        <span ng-bind-html="'— ' + choice.text"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </span>
 </body>
 </html>

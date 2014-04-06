@@ -90,25 +90,25 @@ body {
     position: absolute;
 }
 
-.document.yes {
-    left: 140px;
-    top: 25px;
-}
+    .document.yes {
+        left: 140px;
+        top: 25px;
+    }
 
-.document.no {
-    left: 220px;
-    top: 25px;
-}
+    .document.no {
+        left: 220px;
+        top: 25px;
+    }
 
-.document.no:hover {
-    background: url(../img/document-no.png) no-repeat no-repeat;
-    background-size: cover;
-}
+        .document.no:hover {
+            background: url(../img/document-no.png) no-repeat no-repeat;
+            background-size: cover;
+        }
 
-.document.yes:hover {
-    background: url(../img/document-yes.png) no-repeat no-repeat;
-    background-size: cover;
-}
+    .document.yes:hover {
+        background: url(../img/document-yes.png) no-repeat no-repeat;
+        background-size: cover;
+    }
 
 .queue {
     position: absolute;
@@ -119,8 +119,9 @@ body {
 .bot-hover {
     position: absolute;
     z-index: 10;
-    width: 129px;
-    height: 96px;
+    top: -150px;
+    width: 150px;
+    height: 390px;
     display: inline-block;
     background-color: #333;
 }
@@ -144,17 +145,17 @@ body {
     top: -40px;
 }
 
-.help:hover {
-    width: 100px;
-    height: 100px;
-    background: url(../img/help-hover.png) no-repeat no-repeat;
-    background-size: cover;
-}
+    .help:hover {
+        width: 100px;
+        height: 100px;
+        background: url(../img/help-hover.png) no-repeat no-repeat;
+        background-size: cover;
+    }
 
 .help-bar {
     position: absolute;
-    overflow-y:scroll;
-    z-index:9999;
+    overflow-y: scroll;
+    z-index: 9999;
     font-size: 14.9px;
     height: 370px;
     top: 10px;
@@ -162,30 +163,34 @@ body {
     border-radius: 5px 0 0 5px;
 }
 
-.help-bar .help-paragraphs{
-    position: relative;
-    width: 355px;
-    min-height: 339px;
-    padding: 10px;
-    background: url(../img/lined_paper.png) repeat repeat;
-    background-repeat: repeat;
-}
+    .help-bar .help-paragraphs {
+        position: relative;
+        width: 355px;
+        min-height: 339px;
+        padding: 10px;
+        background: url(../img/lined_paper.png) repeat repeat;
+        background-repeat: repeat;
+    }
 
-.help-bar .help-paragraphs > div {
-    padding-top: 14.9px;
-}
+        .help-bar .help-paragraphs > div {
+            padding-top: 14.9px;
+        }
 
-.help-bar .close {
-    padding-right: 5px;
-    background-image: url("../img/lined_paper.png");
-    font-size: 12px;
-    text-align: right;
-}
+    .help-bar .close {
+        padding-right: 5px;
+        background-image: url("../img/lined_paper.png");
+        font-size: 12px;
+        text-align: right;
+        position: fixed;
+        margin-left: 310px;
+        margin-top: 10px;
+        z-index: 999;
+    }
 
-.help-bar .close:hover {
-    cursor: pointer;
-    color: gray;
-}
+        .help-bar .close:hover {
+            cursor: pointer;
+            color: gray;
+        }
 
 /*Dialog*/
 .dialog {
@@ -207,10 +212,10 @@ body {
     height: 140px;
 }
 
-.dialog-choices p:hover {
-    cursor: pointer;
-    background-color: #CCCCFF;
-}
+    .dialog-choices p:hover {
+        cursor: pointer;
+        background-color: #CCCCFF;
+    }
 
 .result {
     position: absolute;
@@ -224,32 +229,32 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-.result .text-big {
-    z-index: 200;
-    text-align: center;
-    margin-top: 100px;
-    font-weight: bold;
-    font-size: 28px;
-    color: green;
-}
+    .result .text-big {
+        z-index: 200;
+        text-align: center;
+        margin-top: 100px;
+        font-weight: bold;
+        font-size: 28px;
+        color: green;
+    }
 
-.result .text-result {
-    z-index: 200;
-    text-align: center;
-    margin-top: 50px;
-    font-size: 20px;
-    color: #333;
-}
+    .result .text-result {
+        z-index: 200;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 20px;
+        color: #333;
+    }
 
-.result .replay {
-    z-index: 200;
-    text-align: center;
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: eee;
-    border-radius: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-}
+    .result .replay {
+        z-index: 200;
+        text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+        background-color: eee;
+        border-radius: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    }
 
 /*Modificators*/
 .color-blue {
@@ -261,13 +266,13 @@ body {
 }
 
 /*Spoiler*/
-.spoiler-title{
+.spoiler-title {
     border-bottom: 1px dashed;
     font-weight: lighter;
     cursor: pointer;
 }
 
-.spoiler-text{
+.spoiler-text {
     display: none;
     padding-left: 10px;
     padding-top: 18px;
@@ -276,7 +281,7 @@ body {
     text-align: justify;
 }
 
-.about{
+.about {
     position: absolute;
     width: 200px;
     height: 200px;
@@ -289,20 +294,30 @@ body {
     font-style: italic;
 }
 
-.about .td{
-    vertical-align: middle;
-    -moz-transform: rotate(1deg);
-    -webkit-transform: rotate(1deg);
-    -o-transform: rotate(1deg);
-    -ms-transform: rotate(1deg);
-    transform:rotate(1deg);
+    .about .td {
+        vertical-align: middle;
+        -moz-transform: rotate(1deg);
+        -webkit-transform: rotate(1deg);
+        -o-transform: rotate(1deg);
+        -ms-transform: rotate(1deg);
+        transform: rotate(1deg);
+    }
+
+        .about .td > div {
+            padding-top: 5px;
+        }
+
+            .about .td > div:last-child {
+                text-align: center;
+                padding-top: 20px;
+            }
+
+.gui {
+    width: 175px;
+    margin-top: -140px;
 }
 
-.about .td > div{
-    padding-top: 5px;
-}
-
-.about .td > div:last-child{
-    text-align: center;
-    padding-top: 20px;
+.upper {
+    margin-top: -220px;
+    margin-left: 40px;
 }
