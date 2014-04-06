@@ -2,7 +2,7 @@
     return function (scope, element, attrs) {
         var url = attrs.backImg;
         element.css({
-            'background': 'url(' + url + ')',
+            'background': 'url(' + url + ') no-repeat no-repeat',
         });
     };
 });
