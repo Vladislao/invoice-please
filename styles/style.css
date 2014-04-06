@@ -1,12 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Exo+2:300,400,200&subset=latin,cyrillic);
 
-html{
-	height: 100%;/* make sure it is at least as tall as the viewport */
-	position: relative;
-	font-family: 'Exo 2', sans-serif;
+html {
+    height: 100%; /* make sure it is at least as tall as the viewport */
+    position: relative;
+    font-family: 'Exo 2', sans-serif;
 }
-body{
-	height: 100%; /* force the BODY element to match the height of the HTML element */
+
+body {
+    height: 100%; /* force the BODY element to match the height of the HTML element */
 }
 
 /*#_umenu10{
@@ -21,31 +22,31 @@ body{
 	display: none;
 	}*/
 
-	.outer > div{
-		display: none !important;
-	}
+.outer > div {
+    display: none !important;
+}
 
-	.hidden{
-		display: none;
-	}
+.hidden {
+    display: none;
+}
 
-	.outer {
-		display: table;
-		position: absolute;
-		height: 100%;
-		width: 100%;
-	}
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
-	.middle {
-		display: table-cell !important;
-		vertical-align: middle;
-		background-color: #333333;
-	}
+.middle {
+    display: table-cell !important;
+    vertical-align: middle;
+    background-color: #333333;
+}
 
 
-	.inner {
-		margin: auto;
-	}
+.inner {
+    margin: auto;
+}
 /*.wrapper-outer{
 	width: 100%;
 	height: 100%;
@@ -55,220 +56,231 @@ body{
 	background-color: #333333;
 	}*/
 
-	/*Basic*/
-	.container{	
-		width: 900px;
-		height: 390px;
-		background-color: white;
-		position: relative;
-	}
+/*Basic*/
+.container {
+    width: 900px;
+    height: 390px;
+    background-color: white;
+    position: relative;
+}
 
-	/*Office*/
-	.office{
-		/*float: left;*/
-		/*width: 420px;*/
-		/*height: 400px;*/
-		border: 1px solid black;
-		width: 50%;
-		background: url(../img/office.jpg) no-repeat no-repeat;
-		background-size: cover;
-	}
+/*Office*/
+.office {
+    /*float: left;*/
+    /*width: 420px;*/
+    /*height: 400px;*/
+    border: 1px solid black;
+    width: 50%;
+    background: url(../img/office.jpg) no-repeat no-repeat;
+    background-size: cover;
+}
 
-	.watch {
-		margin-left: 84px;
-		margin-top: 6px;
-		width: 35px;
-	}
+.watch {
+    margin-left: 84px;
+    margin-top: 6px;
+    width: 35px;
+}
 
-	.watch-object{
-		width: 150px;
-		height: 200px;
-		display: inline-block;
-		background: url(../img/grifon_0.png) no-repeat no-repeat;
-		background-size: cover;
-		position: absolute;
-		left: -20px;
-		top: -170px;
-	}
+.watch-object {
+    width: 150px;
+    height: 200px;
+    display: inline-block;
+    background: url(../img/grifon_0.png) no-repeat no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: -20px;
+    top: -170px;
+}
 
-	.desk {
-		height: 150px;
-		width: 450px;
-		background: url(../img/computer-office-table-preview.png) no-repeat no-repeat;
-		background-size: cover;
-		position: absolute;
-		bottom: 0;
-	}
+.desk {
+    height: 150px;
+    width: 450px;
+    background: url(../img/computer-office-table-preview.png) no-repeat no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+}
 
-	.document { 
-		display: inline-block;
-		width: 100px;
-		height: 100px;
-		background: url(../img/document.png) no-repeat no-repeat;
-		background-size: cover;
-		position: absolute;
-	}
+.document {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url(../img/document.png) no-repeat no-repeat;
+    background-size: cover;
+    position: absolute;
+}
 
-	.document.yes{
-		left: 140px;
-		top: 25px;
-	}
+    .document.yes {
+        left: 140px;
+        top: 25px;
+    }
 
-	.document.no{
-		left: 220px;
-		top: 25px;
-	}
+    .document.no {
+        left: 220px;
+        top: 25px;
+    }
 
-	.document.no:hover {
-		background: url(../img/document-no.png) no-repeat no-repeat;
-		background-size: cover;
-	}
-	.document.yes:hover {
-		background: url(../img/document-yes.png) no-repeat no-repeat;
-		background-size: cover;
-	}
+        .document.no:hover {
+            background: url(../img/document-no.png) no-repeat no-repeat;
+            background-size: cover;
+        }
 
-	.queue{
-		position: absolute;
-		top: 160px;
-		left: -150px;
-	}
+    .document.yes:hover {
+        background: url(../img/document-yes.png) no-repeat no-repeat;
+        background-size: cover;
+    }
 
-	.bot-hover{
-		position: absolute;
-		z-index: 10;
-		width: 129px;
-		height: 96px;
-		display: inline-block;
-		background-color: #333; 
-	}
+.queue {
+    position: absolute;
+    top: 160px;
+    left: -150px;
+}
 
-	.bot{
-		position: absolute;
-		width: 129px;
-		height: 96px;
-		display: inline-block;
-		background-size: cover;
-	}
+.bot-hover {
+    position: absolute;
+    z-index: 10;
+    width: 129px;
+    height: 96px;
+    display: inline-block;
+    background-color: #333;
+}
 
-	.help {
-		display: inline-block;
-		width: 100px;
-		height: 100px;
-		background: url(../img/help.png) no-repeat no-repeat;
-		background-size: cover;
-		position: absolute;
-		right: 10px;
-		top: -40px;
-	}
+.bot {
+    position: absolute;
+    width: 129px;
+    height: 96px;
+    display: inline-block;
+    background-size: cover;
+}
 
-	.help:hover {
-		width: 100px;
-		height: 100px;
-		background: url(../img/help-hover.png) no-repeat no-repeat;
-		background-size: cover;
-	}
+.help {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url(../img/help.png) no-repeat no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 10px;
+    top: -40px;
+}
 
-	.help-bar {
-		position: absolute;
-		width: 300px;
-		height: 400px;
-		background: url(../img/lined_paper.png) repeat repeat;
-		z-index:9999;
-		overflow-y:scroll;
-		font-size: 15px;
-	}
+    .help:hover {
+        width: 100px;
+        height: 100px;
+        background: url(../img/help-hover.png) no-repeat no-repeat;
+        background-size: cover;
+    }
 
-	.help-bar .close {
-		float: right;
-	}
+.help-bar {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: url(../img/lined_paper.png) repeat repeat;
+    z-index: 9999;
+    overflow-y: scroll;
+    font-size: 15px;
+}
 
-	.help-bar .close:hover {
-		cursor: pointer;
-		color: gray;
-	}
+    .help-bar .squade {
+        width: 20px;
+        height: 17px;
+        background-color: #ccccff;
+        margin-left: 260px;
+        position: fixed;
+    }
 
-	/*Dialog*/
-	.dialog{
-		/*float: left;*/
-		/*width: 220px;*/
-		/*height: 400px;*/
-		border: 1px solid black;
-		padding: 15px;
-		background: url(../img/notebook-2.jpg) no-repeat no-repeat;
-		background-size: cover;
-	}
+    .help-bar .close {
+        color: white;
+        margin-left: 4px;
+    }
 
-	.dialog-history{
-		overflow-y: scroll;
-		height: 220px;
-	}
+        .help-bar .close:hover {
+            cursor: pointer;
+            color: gray;
+        }
 
-	.dialog-choices{
-		position: absolute;
-		bottom: 0;
-		height: 140px;
-	}
+/*Dialog*/
+.dialog {
+    /*float: left;*/
+    /*width: 220px;*/
+    /*height: 400px;*/
+    border: 1px solid black;
+    padding: 15px;
+    background: url(../img/notebook-2.jpg) no-repeat no-repeat;
+    background-size: cover;
+}
 
-	.dialog-choices p:hover{
-		cursor: pointer;
-		background-color: #CCCCFF;
-	}
+.dialog-history {
+    overflow-y: scroll;
+    height: 220px;
+}
 
-	.result{
-		position: absolute;
-		top: 50px;
-		bottom: 50px;
-		right: 50px;
-		left: 50px;
-		z-index: 100;
-		background: url(../img/res.png);
-		border-radius: 50px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-	}
+.dialog-choices {
+    position: absolute;
+    bottom: 0;
+    height: 140px;
+}
 
-	.result .text-big{
-		z-index: 200;
-		text-align: center;
-		margin-top: 100px;
-		font-weight: bold;
-		font-size: 28px;
-		color: green;
-	}
+    .dialog-choices p:hover {
+        cursor: pointer;
+        background-color: #CCCCFF;
+    }
 
-	.result .text-result{
-		z-index: 200;
-		text-align: center;
-		margin-top: 50px;
-		font-size: 20px;
-		color: #333;
-	}
+.result {
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    right: 50px;
+    left: 50px;
+    z-index: 100;
+    background: url(../img/res.png);
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
 
-	.result .replay{
-		z-index: 200;
-		text-align: center;
-		margin-top: 20px;
-		cursor: pointer;
-		background-color: eee;
-		border-radius: 20px;
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-	}
+    .result .text-big {
+        z-index: 200;
+        text-align: center;
+        margin-top: 100px;
+        font-weight: bold;
+        font-size: 28px;
+        color: green;
+    }
 
-	/*Modificators*/
-	.color-blue{
-		color: #3366FF;
-	}
-	.color-red{
-		color: #FF6600;
-	}
+    .result .text-result {
+        z-index: 200;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 20px;
+        color: #333;
+    }
 
-	/*Spoiler*/
-	.spoiler-title{
-		border-bottom: 1px dashed;
-		font-weight: lighter;
-		cursor: pointer;
-	}
+    .result .replay {
+        z-index: 200;
+        text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+        background-color: eee;
+        border-radius: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    }
 
-	.spoiler-text{
-		display: none;
-	}
+/*Modificators*/
+.color-blue {
+    color: #3366FF;
+}
+
+.color-red {
+    color: #FF6600;
+}
+
+/*Spoiler*/
+.spoiler-title {
+    border-bottom: 1px dashed;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.spoiler-text {
+    display: none;
+}

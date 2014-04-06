@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -19,7 +19,8 @@
 	<script src="scripts/controllers/deskController.js"></script>
 	<script src="scripts/services/botService.js"></script>
 	<script src="scripts/services/dialogService.js"></script>
-	<script src="scripts/services/helpService.js"></script>
+    <script src="scripts/services/helpService.js"></script>
+    <script src="scripts/directives/backImg.js"></script>
 </head>
 <body ng-app="game" class="outer">
 	<span class="visible middle">
@@ -34,18 +35,18 @@
 					<div class="text-result">Ваш результат: {{getResult()}} из {{getCount()}}</div>
 					<div class="replay" ng-click="reload()">Начать заново</div>
 				</div>
-				<div ng-controller="HelpController" ng-show="showHelp" class="help-bar">
-					<div class="close" ng-click="closeHelp()">&#10006;</div>
-					<div>
-						<div class="spoiler" ng-repeat="helpItem in helpItems" ng-include="getIncludeFile(helpItem)">
-						</div>
-					</div>
-				</div>
+			    <div ng-controller="HelpController" ng-show="showHelp" class="help-bar">
+                    <div class="squade"><div class="close" ng-click="closeHelp()">&#10006;</div></div>
+			        <div>
+			            <div class="spoiler" ng-repeat="helpItem in helpItems" ng-include="getIncludeFile(helpItem)">
+			            </div>
+			        </div>
+			    </div>
 			</div>
 			<div class="office td">
 				<div ng-controller="QueueController" class="queue">
-					<div class="bot-hover"></div>
-					<div class="bot" id="{{bot.id}}" style="{{ 'background: url(' + bot.img + ') no-repeat no-repeat;' }}" ng-repeat="bot in bots"></div>
+				    <div class="bot-hover"></div>
+					<div class="bot" id="{{bot.id}}" back-img="{{bot.img}}" ng-repeat="bot in bots"></div>
 				</div>
 				<div ng-controller="DeskController" class="desk">
 					<div class="watch-object">

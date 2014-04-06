@@ -28,15 +28,14 @@ game.controller('DeskController', ["$rootScope", "$scope", "$modal", "botService
 	};
 	$(function(){
 		moveRight();
-	})
+	});
 }]);
 
 game.controller('ResultController', ["$scope", "botService", function($scope, botService){
 	$scope.getCount = function(){
 		return botService.getCount();
-	}
-
-	$scope.getResult = function(){
+	};
+    $scope.getResult = function(){
 		var bots = botService.getBots();
 		var correct = 0;
 		for (var i = 0; i < bots.length; ++i){
@@ -44,12 +43,11 @@ game.controller('ResultController', ["$scope", "botService", function($scope, bo
 			correct += bot.result.user == bot.result.real ? 1 : 0;
 		}
 		return correct;
-	}
-
-	$scope.reload = function(){
+	};
+    $scope.reload = function(){
 		// хак для хэша
 		window.location = window.location.href.replace(window.location.hash, "");
-	}
+	};
 }]);
 
 game.controller('HelpController', ["$scope", "helpService", function($scope, helpService){
@@ -65,7 +63,7 @@ game.controller('HelpController', ["$scope", "helpService", function($scope, hel
 	$scope.helpItems = helpService.getHelpItems();
 
 	$scope.closeHelp = function(){
-		$rootScope.showHelp = false;
+		window.$rootScope.showHelp = false;
 	};
 
 	$scope.getIncludeFile = function(section){
