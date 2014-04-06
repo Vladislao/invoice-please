@@ -3,7 +3,7 @@
 html{
 	height: 100%;/* make sure it is at least as tall as the viewport */
 	position: relative;
-    font-family: 'Exo 2', sans-serif;
+	font-family: 'Exo 2', sans-serif;
 }
 body{
 	height: 100%; /* force the BODY element to match the height of the HTML element */
@@ -169,6 +169,25 @@ body{
 		background-size: cover;
 	}
 
+	.help-bar {
+		position: absolute;
+		width: 300px;
+		height: 400px;
+		background: url(../img/lined_paper.png) repeat repeat;
+		z-index:9999;
+		overflow-y:scroll;
+		font-size: 15px;
+	}
+
+	.help-bar .close {
+		float: right;
+	}
+
+	.help-bar .close:hover {
+		cursor: pointer;
+		color: gray;
+	}
+
 	/*Dialog*/
 	.dialog{
 		/*float: left;*/
@@ -216,16 +235,16 @@ body{
 		font-size: 28px;
 		color: green;
 	}
- 	
- 	.result .text-result{
+
+	.result .text-result{
 		z-index: 200;
 		text-align: center;
 		margin-top: 50px;
 		font-size: 20px;
 		color: #333;
- 	}
+	}
 
- 	.result .replay{
+	.result .replay{
 		z-index: 200;
 		text-align: center;
 		margin-top: 20px;
@@ -233,7 +252,7 @@ body{
 		background-color: eee;
 		border-radius: 20px;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
- 	}
+	}
 
 	/*Modificators*/
 	.color-blue{
@@ -241,4 +260,15 @@ body{
 	}
 	.color-red{
 		color: #FF6600;
+	}
+
+	/*Spoiler*/
+	.spoiler-title{
+		border-bottom: 1px dashed;
+		font-weight: lighter;
+		cursor: pointer;
+	}
+
+	.spoiler-text{
+		display: none;
 	}

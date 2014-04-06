@@ -23,6 +23,9 @@ game.controller('DeskController', ["$rootScope", "$scope", "$modal", "botService
 			});
 		}
 	};
+	$scope.showHelp = function(){
+		$rootScope.showHelp = !$rootScope.showHelp;
+	};
 	$(function(){
 		moveRight();
 	})
@@ -44,6 +47,29 @@ game.controller('ResultController', ["$scope", "botService", function($scope, bo
 	}
 
 	$scope.reload = function(){
-		window.location = location;
+		// хак для хэша
+		window.location = window.location.href.replace(window.location.hash, "");
 	}
 }]);
+
+game.controller('HelpController', ["$scope", "helpService", function($scope, helpService){
+	// $('.spoiler-text').hide();
+
+	$('.spoiler-title').live('click', function(){
+	    var spoiler = $(this).parent('.spoiler');
+
+	    $('> .spoiler-text', spoiler).slideToggle();
+	    	spoiler.toggleClass('spoiler-open');
+  	});
+
+	$scope.helpItems = helpService.getHelpItems();
+
+	$scope.closeHelp = function(){
+		$rootScope.showHelp = false;
+	};
+
+	$scope.getIncludeFile = function(section){
+        return '../partials/help' +  section.Id+ '.html';
+	};
+}]);
+

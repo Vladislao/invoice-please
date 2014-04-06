@@ -19,6 +19,7 @@
 	<script src="scripts/controllers/deskController.js"></script>
 	<script src="scripts/services/botService.js"></script>
 	<script src="scripts/services/dialogService.js"></script>
+	<script src="scripts/services/helpService.js"></script>
 </head>
 <body ng-app="game" class="outer">
 	<span class="visible middle">
@@ -33,6 +34,15 @@
 					<div class="text-result">Ваш результат: {{getResult()}} из {{getCount()}}</div>
 					<div class="replay" ng-click="reload()">Начать заново</div>
 				</div>
+				<div ng-controller="HelpController" ng-show="showHelp" class="help-bar">
+					<div class="close" ng-click="closeHelp()">&#10006;</div>
+					<div>
+						<div class="spoiler" ng-repeat="helpItem in helpItems" ng-include="getIncludeFile(helpItem)">
+<!-- 							<b class="spoiler-title">{{helpItem.title}}</b>
+							<div class="spoiler-text">{{helpItem.text}}</div> -->
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="office td">
 				<div ng-controller="QueueController" class="queue">
@@ -45,7 +55,7 @@
 					</div>
 					<div class="document yes" ng-click="next(true)"></div>
 					<div class="document no" ng-click="next(false)"></div>
-					<div class="help"></div>
+					<div class="help" ng-click="showHelp()"></div>
 				</div>
 			</div>
 			<div ng-controller="DialogController" class="dialog td">
@@ -63,6 +73,5 @@
 			</div>
 		</div>
 	</span>
-	<div class="hidden">$POWERED_BY$</div>
 </body>
 </html>
